@@ -10,12 +10,13 @@ class App extends Component {
     super(props)
     this.state = {
       students: null,
+      displayedStudents: null,
       nameInput: "",
       tagInput: "",
-      displayedStudents: null,
     }
   }
   componentDidMount() {
+    //fetch api
     callAPI().then(data => {
       this.setState({
         students: data.students
@@ -43,11 +44,13 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.displayedStudents);
+    
     let students = this.state.displayedStudents || this.state.students
     return (
       <div className="page">
         <div className="box">
-          <div className="searchInputs">
+          <div className="searchInputs" >
             <SearchInput
               change={this.filterName}
               value={this.state.nameInput}
@@ -62,7 +65,11 @@ class App extends Component {
           <div className="students">
             {students &&
               students.map(stu =>
-                <Student student={stu} students={this.state.students} renewStudents={this.renewStudents} />
+                <Student
+                  student={stu}
+                  students={students}
+                  renewStudents={this.renewStudents}
+                />
               )
             }
           </div>
