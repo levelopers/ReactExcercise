@@ -1,0 +1,47 @@
+.student{
+  min-height: 30%;
+  border-bottom: 0.5px solid grey;
+  display: flex
+}
+.portrait{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+}
+.portrait img{
+  width: 80%;
+  height: 80%;
+  border: 1px solid rgb(158, 156, 156);
+  border-radius: 50%;
+  min-width: 50px;
+}
+.info{
+  margin-left: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 70%;
+  overflow: hidden;
+}
+.name{
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.general_info{
+  font-size: 20px;
+  margin-left: 5%;
+  color:grey;
+}
+
+.expand_symbol{
+  min-width: 30px;
+  min-height: 30px;
+  margin-left: auto;
+  font-size: 50px;
+  color: #666675;
+}

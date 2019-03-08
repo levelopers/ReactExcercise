@@ -1,0 +1,26 @@
+.expand_outbox{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.expand_tags{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.tag{
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: black;
+  background: rgb(168, 165, 165);
+}
+.expand_inputs{
+  border-bottom: 1px solid black;
+  max-width: 50%;
+}
+.expand_input{
+  outline: none;
+  border: none;
+  font-size: 20px;
+}

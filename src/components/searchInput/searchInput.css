@@ -1,0 +1,21 @@
+.input_outbox{
+  width: 50vw;
+  height: 50px;
+  background: white;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+.search_input{
+  width: 95%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  border-bottom: 1px solid grey;
+}
+.search_input::placeholder{
+  font-size: 30px
+}

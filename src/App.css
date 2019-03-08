@@ -1,0 +1,37 @@
+.page{
+ width: 100vw;
+ height: 100vh;
+ background: #cccccc;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.box{
+  width: 50vw;
+  height: 80%;
+  overflow: scroll;
+  background: white;
+  box-shadow: 2px 2px #666675;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+::-webkit-scrollbar {
+  width: 0px; 
+  background: transparent; 
+}
+.searchInputs{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background: white;
+  z-index: 1;
+  padding-top: 10px;
+  border-radius: 20px;
+}
+.students{
+  height: 80%;
+  position: relative;
+  margin-top: 120px;
+}
+
