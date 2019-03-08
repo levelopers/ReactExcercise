@@ -19,34 +19,43 @@ class App extends Component {
     //fetch api
     callAPI().then(data => {
       this.setState({
-        students: data.students
+        students: data.students,
+        displayedStudents: data.students
       })
     })
   }
   filterName = (e) => {
-    let result = filter(this.state.students, "name")(e.target.value)
+    let currentResult
+    if (this.state.tagInput) {
+      currentResult = filter(this.state.students, "tag")(this.state.tagInput)
+    } else {
+      currentResult = this.state.students
+    }
     this.setState({
-      displayedStudents: result,
+      displayedStudents: filter(currentResult, "name")(e.target.value),
       nameInput: e.target.value
     })
   }
   filterTag = (e) => {
-    let tagResult = filter(this.state.students, "tag")(e.target.value)
+    let currentResult
+    if (this.state.nameInput) {
+      currentResult = filter(this.state.students, "name")(this.state.nameInput)
+    } else {
+      currentResult = this.state.students
+    }
     this.setState({
-      displayedStudents: tagResult,
+      displayedStudents: filter(currentResult, "tag")(e.target.value),
       tagInput: e.target.value
     })
   }
+  //add tag property 
   renewStudents = (newStudents) => {
     this.setState({
       students: newStudents
     })
   }
-
   render() {
-    console.log(this.state.displayedStudents);
-    
-    let students = this.state.displayedStudents || this.state.students
+    let students = this.state.displayedStudents
     return (
       <div className="page">
         <div className="box">
@@ -69,6 +78,7 @@ class App extends Component {
                   student={stu}
                   students={students}
                   renewStudents={this.renewStudents}
+                  key={stu["id"]}
                 />
               )
             }
